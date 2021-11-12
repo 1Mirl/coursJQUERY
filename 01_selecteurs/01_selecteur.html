@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+   integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+   <!-- boostrap icon -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+   <link rel="stylesheet" href="../css/style.css">
+
+    <title>Introduction JQUERY</title>
+</head>
+<body>
+    <!-- Narvabar à faire -->
+
+    <header class="container-fluid bg-light text-primary">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="display-4">JQUERY- Introduction</h1>
+                <p class="lead">JQUERY: write less... do more</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- contenu principal -->
+    <main>
+        <div class="row p-2">
+            <div class="col-6">
+                <h2>JQUERY est une API</h2>
+                <p>JQuery est ce qu'on appelle une bibliothèque ou une API (application programming interface) Javascript, c'est à dire un ensemble de fonctions qui permettent d'écrire de manière condensée, les lignes de codes les plus utilisées en Javascript.</p>
+                <p class="small">La version 1.0 stable de JQuery a été crée en aout 2006 par un jeune homme de 22 ans du nom de John RESIG. Aujourd’hui nous en sommes à : JQuery JavaScript Library v3.5.1</p>
+                <p>On peut trouver <a href=""></a></p>
+            </div>
+            <div class="col-6">
+                <h3>JQUERY écrit d'une maniére plus condensée</h3>
+                <p>Nous allons souvent utiliser les fonctions Javascript qui permettent d'attraper les balises HTML et les animer, ainsi en Javascript nous allons écrire d'une certaine manière et en JQuery d'une manière plus condensée</p>
+                <p class="bg-light p-2">jQuery est une bibliothèque JavaScript créée par John Resig en 2006 afin de faciliter la lecture et l’écriture du JavaScript. Une vingtaine de lignes de code en JavaScript correspond à quelques lignes seulement en jQuery. D’où le slogan : "Write less… Do more".</p>
+            </div>
+
+            <div class="col-12 bg-primary">
+                <h4>Exemple :</h4>
+                <ul>
+                    <li>Javascript :<code>document.getElementsByTagName('p')(0).innerHTML = 'Je change le contenu du 1er p de tous les p avec JS.';</code></li>
+                    <li>jQuery :<code>$('p:first').text('Et là je change le texte avec jQuery');</code></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row p-2">
+            <div class="col-12 col-md-6">
+                
+            </div>
+            <div class="col-12 col-md-6">
+                <figure>
+                    <img src="img/panthere.png" alt="">
+                    <figcaption>La panthére rose</figcaption>
+                </figure>
+            </div>
+        </div>
+    </main>
+    
+   
+    <!-- jquery en locale -->
+    <script src="jquery/jquery-3.6.0.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // ici mon code à executer
+            confirm 'Bienvenu sur cette page qui utilise jQuery.';
+            console.log 'jquery est actif';
+        });
+
+        // il existe 3 maniéres de plus en plus simples d'appeler jquery
+        jQuery(document).ready(function() {
+            // ici mon code à executer
+            confirm 'Bienvenu sur cette page qui utilise jQuery.';
+            console.info '1ere methode';
+        });
+        // 1ere methode
+
+        jQuery(function() {
+            console.info '2eme méthode';
+        });
+        // 2e méthode
+
+        $(function() {
+            console.info '3éme méthode';
+        });
+        // 3e méthode
+    </script>
+</body>
+</html>
