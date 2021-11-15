@@ -72,7 +72,7 @@
                 <h2>Titre de niveau 2</h2>
                 <p>Paragraphe 3</p>
                 <figure>
-                    <img src="img/panthere.png" alt="photo" class="img-fluid">
+                    <img src="img/panthere.png" alt="photo" class="img-fluid" title="panthere-rose">
                     <figcaption>La panthére rose</figcaption>
                 </figure>
                 <ul>
@@ -214,7 +214,43 @@
         $('code').addClass('bg-success text-white'); 
 
         $('strong').eq(1).addClass('bg-dark');
-        $('strong').eq(2).removeClass(bg-primary);
+        $('strong').eq(2).removeClass('bg-primary');
+
+        //hasClass() renvoie true ou false : a-t-il la classe?
+        console.log($('strong').eq(0).hasClass('lead'));
+        //toggleClass() cf. 01-evenements.html
+
+        console.log('---7---');
+        //7 Manipulation d'attributs avec .attr() et .removeAttr()
+        //ajouter un attribut avec attr(), il apparait quand on passe dessus
+        $('h1').eq(0).attr('title','write less ... do more');
+        console.info($('#toutou'));
+
+        console.log($('strong'));
+        //enlever un attribut la ou les valeurs de l'attribut
+        $('h2').eq(0).removeAttr('class');
+        //enlever les attributs de deux élements dans un tableau
+        $('strong:eq(0), strong:eq(1)').removeAttr('class');
+
+        console.log('---8---');
+        //8 Manipulation des parents et des enfants...
+        console.log($('figure').find('img'));
+        $('figure').find('img').attr('title', 'La panthére rose préféré');
+
+        //mini EXO
+        //dans une variable monAlt récupérer l'attribut alt de img
+        //let monAlt = document.getElementsByTagName('alt');
+        let monAlt = $('figure').find('img').attr('alt');
+        console.log(monAlt);
+        //afficher le contenu de cette variable dans figcaption,ici on remplace le contenu de figcaption par Alt. 
+
+        $('figure').find('figcaption').html(monAlt).css({
+            'background-color': 'orange',
+            'text-align': 'center',
+        });
+        //$('figcaption').text(monAlt);
+
+
     </script>
 </body>
 </html>
