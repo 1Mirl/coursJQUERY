@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+   integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+   <!-- boostrap icon -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+   <link rel="stylesheet" href="../css/evenements.css">
+
+   <title>Les évènements </title>
+</head>
+<body>
+    <div class="container-fluid p-2">
+        <h1 class="display-1">jQuery - </h1>
+        <p class="lead">Vive le vent, vive le vent, vive le vent d'hiver...</p>
+    </div>
+
+    <div class="container">
+        <div class="row border border-warning p-4">
+            <div class="col-2">
+                <button id="btn1" class="btn btn-outline-primary" title="btn1">Cliquez</button>
+            </div>
+            <div class="col-2">
+                <button id="btn2" class="btn btn-outline-primary" title="btn2">Double cliquez</button>
+            </div>
+            <div class="col-2">
+                <button id="btn3" class="btn btn-outline-primary" title="btn3">Toggle</button>
+            </div>
+            <div class="col-2">
+                <button id="btn4" class="btn btn-outline-primary" title="btn4">Toggle class</button>
+            </div>
+            <div class="col-2">
+                <button id="btn5" class="btn btn-outline-primary" title="btn5">Passez sur moi</button>
+            </div>
+            <div class="col-2">
+                <button id="btn6" class="btn btn-outline-primary" title="btn6">Animez</button>
+            </div>
+        </div>
+        <!-- fin row -->
+    </div>
+    
+     <!-- Optional JavaScript -->
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+    
+    <!-- jquery en locale -->
+    <script src="jquery-3.6.0.js"></script>
+
+    <script>
+        //exemple pour une fonction on peut avoir ce code
+        $(document).ready(function() {
+            //le code à éxécuter au chargement de la page
+            $('h1').append('Les événements');
+        });
+
+        //1ere fonction sur le premier boutton
+            $('#btn1').click(function() {
+                $('h1').css({
+                'color': 'red',
+                'text-decoration': 'underline',
+              })
+            });
+
+            //2éme fonction sur le 2éme bouton
+            $('#btn2').dblclick(function(){
+                // on fait à "this" le btn2 un display none pour faire cacher ce bouton ou: $(this).hide();
+                // $(this).css("display", "none");
+                $('body').css({
+                    'background-color': 'pink',
+                    'text-transform': 'uppercase',
+                })
+            });
+
+            //3éme fonction btn3
+            $('#btn3').click(function(){
+                $('p').toggle();
+            });
+
+            //4éme fonction btn4
+            $('#btn4').click(function(){
+                $('h1').toggleClass('laClasse');
+            });
+
+            //5éme fonction btn5
+            // $('#btn5').mouseenter(function(){
+            //     $('.container').addClass('laClasse');
+            // });
+
+            // $('#btn5').mouseleave(function(){
+            //     $('.container').removeClass('laClasse');
+            // });
+
+            //autre méthode
+            $('#btn5').hover(
+                function(){
+                    $('.container').addClass('laClasse');
+                },
+                function(){
+                    $('.container').removeClass('laClasse');
+                }
+            )
+    </script>
+</body>
+</html>
